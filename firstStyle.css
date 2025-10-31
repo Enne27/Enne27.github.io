@@ -3,5 +3,65 @@ body {
 }
 
 #title {
-    color: azure;
+    color: rgb(199, 153, 239);
+}
+
+
+/* Barra superior */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Título a la izquierda, iconos a la derecha */
+    align-items: center;            /* Centra verticalmente */
+    padding: 1em 2em;
+    position: fixed;                /* Fija arriba */
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 10; 
+    background-color: rgba(30, 30, 30, 0.6);
+    backdrop-filter: blur(8px); /* desenfoca lo que hay detrás */
+}
+
+.navbar ul { /* Quita los puntos de lista y los pone en línea*/
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+.navbar li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+
+/* Hover general */
+.navbar li a:hover {
+    transform: scale(1.3);
+    transition: filter 0.3s, transform 0.3s;
+}
+
+.fa-github:hover {
+    color: #6e5494; /* color morado del logo de GitHub */
+}
+
+/* Imagen del icono de Itch.io */
+#itchioLink img {
+    margin-right: 2em;
+    width: 5.5em;
+    height: 1.2em;
+    object-fit: contain;   /* evita deformar la imagen */
+    filter: brightness(0) invert(1); /* la hace blanca si la barra es oscura */
+    transition: filter 0.3s, transform 0.3s; /* suaviza el efecto hover */
+}
+
+#itchioLink img:hover {
+    filter: brightness(0.6); /* menos brillo = más oscuro */
+    transform: scale(1.1);             /* pequeño zoom al pasar el mouse */
 }
